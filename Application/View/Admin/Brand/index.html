@@ -1,0 +1,37 @@
+<p><a href="add.html">添加管理员</a></p>
+<table border="1px" cellpadding="0" cellspacing="0" width="80%" style="text-align: center">
+    <tr>
+        <td>ID</td>
+        <td>品牌名称</td>
+        <td>URL</td>
+        <td>LOGO</td>
+        <td>精品</td>
+        <td>新品</td>
+        <td>热销</td>
+        <td>滞销</td>
+        <td>简介</td>
+        <td>操作</td>
+    </tr>
+    <?php foreach($rows as $row):?>
+    <tr>
+        <td><?php echo $row['id'];?></td>
+        <td><?php echo $row['name'];?></td>
+        <td><?php echo $row['url'];?></td>
+        <td><?php echo $row['logo'];?></td>
+        <td><img src="./Public/Admin/image/<?php echo $row['is_best']?>.gif"></td>
+        <td><img src="./Public/Admin/image/<?php echo $row['is_new']?>.gif"></td>
+        <td><img src="./Public/Admin/image/<?php echo $row['is_hot']?>.gif"></td>
+        <td><img src="./Public/Admin/image/<?php echo $row['is_die']?>.gif"></td>
+        <td><?php echo $row['intro'];?></td>
+        <td>
+            <a href="index.php?p=Admin&c=Brand&a=remove&id=<?php echo $row['id'];?>">删除</a>
+        </td>
+    </tr>
+    <?php endforeach;?>
+</table>
+
+<?php
+echo $name."<br />";
+echo $age."<br />";
+
+?>
